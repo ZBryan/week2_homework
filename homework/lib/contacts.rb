@@ -115,9 +115,9 @@ class Contacts
 
   def search string
     #truck_array = Array.new
-    #@contacts.each{|x| if x.include? string then truck_array << x[string]} 
+    #@contacts.each{|x| if x.include? string then truck_array << x} 
     #truck_array
-    @contacts.map do |x| if x.include?(string) ; x end
+    @contacts.select { |x| x.value? string} #do #|x| if x.values.include?(string) ; x #end
   end
 
   def all_sorted_by field
